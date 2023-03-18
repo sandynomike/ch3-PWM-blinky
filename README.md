@@ -18,9 +18,9 @@ such in the GPIOA CNF/MODE bits:
 &nbsp;&nbsp;&nbsp;&nbsp;CNF0[1:0] = 0b10, MODE0[1:0] = 0b10
 
 Using the internal 8 MHz clock, in order to achieve a 1 Hz blink rate with a 50% duty
-cycle, the period needs to be 8E6 with the capture/compare setting of 4E6. However,
-since we are using a 16-bit register, the maximum settable period is 65,535 ticks at
-a frequency of 8 MHz.
+cycle, the period needs to be 8,000,000 (8E6) with the capture/compare setting of 4E6.
+However, since we are using a 16-bit register, the maximum settable period is 65,535
+ticks at a frequency of 8 MHz.
 
 &nbsp;&nbsp;&nbsp;&nbsp;Period = 65,535 ticks / 8 MHz = 8.19 ms<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Frequency = 1 / 8.19 ms = 122 Hz

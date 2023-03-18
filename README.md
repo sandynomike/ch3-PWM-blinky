@@ -1,4 +1,5 @@
-# Blue Pill Challenge 3: PWM Blinky
+Blue Pill Challenge 3: PWM Blinky
+---------------------------------
 
 Object: Blink an LED using PWM
 ------------------------------

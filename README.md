@@ -22,7 +22,7 @@ cycle, the period needs to be 8E6 with the capture/compare setting of 4E6. Howev
 since we are using a 16-bit register, the maximum settable period is 65,535 ticks at
 a frequency of 8 MHz.
 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Period = 65,535 ticks / 8 MHz = 8.19 ms<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Period = 65,535 ticks / 8 MHz = 8.19 ms<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Frequency = 1 / 8.19 ms = 122 Hz
 
 An LED flashing at 122 Hz is too fast to see. So we need to use a prescaler to slow

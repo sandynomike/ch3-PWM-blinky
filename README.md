@@ -14,28 +14,28 @@ The LED will be attached to this A0 pin. Since the pin will be driven by a PWM t
 this is considered an "alternate function" (AF) of the GPIO pin, and must be set as
 such in the GPIOA CNF/MODE bits:
 
-    Alternate Function, Push-Pull Output, 2 MHz max speed setting:
-    CNF0[1:0] = 0b10, MODE0[1:0] = 0b10
+&nbsp;&nbsp;&nbsp;&nbsp;Alternate Function, Push-Pull Output, 2 MHz max speed setting:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;CNF0[1:0] = 0b10, MODE0[1:0] = 0b10
 
 Using the internal 8 MHz clock, in order to achieve a 1 Hz blink rate with a 50% duty
 cycle, the period needs to be 8E6 with the capture/compare setting of 4E6. However,
 since we are using a 16-bit register, the maximum settable period is 65,535 ticks at
 a frequency of 8 MHz.
 
-     Period = 65,535 ticks / 8 MHz = 8.19 ms
-  Frequency = 1 / 8.19 ms = 122 Hz
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Period = 65,535 ticks / 8 MHz = 8.19 ms<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Frequency = 1 / 8.19 ms = 122 Hz
 
 An LED flashing at 122 Hz is too fast to see. So we need to use a prescaler to slow
 down the PWM clock. Using a prescaler of 8000:
 
-    8 MHz main clock / 8000 prescaler = 1 kHz PWM clock
+&nbsp;&nbsp;&nbsp;&nbsp;8 MHz main clock / 8000 prescaler = 1 kHz PWM clock
 
 With this, the PWM clock period can easily be set in miliseconds in the TIM2 ARR register and
 likewise, the duty cycle period in the TIM2 CCR1 register. Nice! For a 1 Hz clock with a 50%
 duty cycle:
 
-    TIM2->ARR = 1000  (1000 ms PWM period)
-    TIM2->CCR1 = 500  (duty cycle = 500 / 1000 = 50%)
+&nbsp;&nbsp;&nbsp;&nbsp;TIM2->ARR = 1000  (1000 ms PWM period)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;TIM2->CCR1 = 500  (duty cycle = 500 / 1000 = 50%)
 
 
 Software Setup:

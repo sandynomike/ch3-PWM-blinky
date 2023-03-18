@@ -1,14 +1,15 @@
 # Blue Pill Challenge 3: PWM Blinky
 
 Object: Blink an LED using PWM
-==============================
+------------------------------
 
 Hardware Setup:
-===============
+---------------
 Install an LED and a series 1k resistor between pin A1 and ground.
 
 Considerations:
-===============
+---------------
+
 The PWM output will use channel 2 of timer 1 (TIM2_CH1) which is output on pin A0.
 The LED will be attached to this A0 pin. Since the pin will be driven by a PWM timer,
 this is considered an "alternate function" (AF) of the GPIO pin, and must be set as
@@ -39,7 +40,8 @@ duty cycle:
 
 
 Software Setup:
-===============
+---------------
+
 1. Enable GPIO Port A in the RCC APB2ENR register.
 2. Set up pin configuration/mode for A0 (LED) as Alternate Function (AF) output,
    push-pull, 2 MHz. This means setting the GPIOA CRL register CNF0[1:0] bits as
@@ -57,7 +59,7 @@ Software Setup:
    register.
 
 Compilation and Upload<br>
-======================
+----------------------
 The default makefile is set up to work with an ST-LINK V2 programming dongle under Linux. For other
 setups, open and edit Makefile and edit as required. There are hints in the Makefile for different
 programming options.

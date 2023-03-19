@@ -49,9 +49,9 @@ Software Setup:
    0b10, and MODE0[1:0] bits as 0b10. Remember that the default setting for
    CNF0[1:0] is 0b01, so that CNF0[0] bit must be specifically cleared!
 3. Enable TIM 2 by setting the RCC_APB1ENR_TIM2EN bit in the RCC APB1ENR register.
-4. Set the prescaler via the TIM2 PSC register to slow down the output frequency.
-5. Set PWM period via the TIM2 ARR register.
-6. Set PWM duty cycle via the TIM2 CCR1 register.
+4. Set the prescaler via the TIM2 PSC register to to 8000 slow down the PWM frequency.
+5. Set PWM period via the TIM2 ARR register to 1000.
+6. Set PWM duty cycle via the TIM2 CCR1 register to 500..
 7. Set PWM mode 1 by setting the TIM_CCMR1_OC1Mx bits as 110 via the TIM2 CCMR1
    register.
 8. Enable output of TIM2 Channel 1 to pin A0 by setting the TIM_CCER_CC1E bit in
